@@ -7,6 +7,7 @@
     <title>Hello World</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
 
@@ -16,20 +17,18 @@
         <main>
             <article>
                 <p>Crea tu Tarjeta</p>
-                <input type="text" name="tarjeta" id="tarjeta">
-                <input type="button" value="Agregar" id="agregar"> 
+                <form action="#" method="post" id="addCard">
+                    <input type="text" name="textCard" id="textCard">
+                    <input type="submit" value="Agregar" id="agregar"> 
+                </form>
             </article>
-            <article class="tarjetas">
-                <section>
-                    Tarjeta 1 Tarjeta 1 Tarjeta 1 Tarjeta 1 Tarjeta 1 Tarjeta 1 
-                </section>
-                <section>
-                    Tarjeta 2
-                </section>
+            <article id="cards">
+
             </article>
         </main>
         <footer>
             <p>Digital House</p>
         </footer>      
 </body>
+<script type="text/javascript" src="index.js"></script>
 </html>
