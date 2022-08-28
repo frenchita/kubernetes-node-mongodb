@@ -1,3 +1,5 @@
+const base_url = 'http://examen.dh/';
+
 async function processForm(e) {
     if (e.preventDefault) e.preventDefault();
 
@@ -9,7 +11,7 @@ async function processForm(e) {
         text: textCard
       })
 
-    const response = await fetch('http://localhost:3001/api/cards', {
+    const response = await fetch(`${base_url}api/cards`, {
         method: 'POST',
         body: data,
         headers: {
@@ -17,9 +19,9 @@ async function processForm(e) {
         }
     });
 
-    const myJson = await response.json(); 
+    const cardsResponse = await response.json(); 
     
-    pushCards(myJson, 'cards')
+    pushCards(cardsResponse, 'cards')
 
     cardObject.value = ''
     cardObject.focus()
@@ -37,7 +39,7 @@ if (form.attachEvent) {
 
 
 async function reloadCards(){
-    const response = await fetch('http://localhost:3001/api/cards');
+    const response = await fetch(`${base_url}api/cards`);
     const cardsInformation = await response.json();
     pushCards(cardsInformation, 'cards')
     
@@ -46,7 +48,6 @@ async function reloadCards(){
 async function pushCards(cardsInformation, container){
     cardsContainer = document.getElementById(container)
     cardsContainer.innerHTML = '';
-    console.log(cardsInformation)
 
     cardsInformation.forEach(card => {
         console.log(card.text)

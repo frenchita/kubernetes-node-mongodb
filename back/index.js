@@ -32,7 +32,7 @@ app.post('/api/cards', async function (req, res) {
   try {
 
     const data = {text: req.body.text}
-    new Card(data).save();
+    await new Card(data).save();
 
     console.log("Card added: " + data.text)
     res.status(200).json(await Card.find())
