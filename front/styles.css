@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+
+
+.tarjetas {
+    display: flex;
+    align-items: center;
+    max-width: 100%; 
+    flex-flow: row wrap;   
+}
+.tarjetas > section {
+    min-height: 150px;
+    min-width: 300px;
+    max-width: 300px;
+    margin: 10px;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 10px;
+}
